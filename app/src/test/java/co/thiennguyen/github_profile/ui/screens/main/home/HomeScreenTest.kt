@@ -1,8 +1,10 @@
 package co.thiennguyen.github_profile.ui.screens.main.home
 
-import androidx.activity.setContent
-import androidx.ui.test.*
-import androidx.ui.test.junit4.*
+import androidx.activity.compose.setContent
+import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.junit4.AndroidComposeTestRule
+import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import co.thiennguyen.github_profile.R
 import co.thiennguyen.github_profile.domain.usecases.UseCase
@@ -10,14 +12,15 @@ import co.thiennguyen.github_profile.test.MockUtil
 import co.thiennguyen.github_profile.ui.base.BaseDestination
 import co.thiennguyen.github_profile.ui.screens.BaseScreenTest
 import co.thiennguyen.github_profile.ui.screens.MainActivity
-import co.thiennguyen.github_profile.ui.themeTheme
+import co.thiennguyen.github_profile.ui.theme.ComposeTheme
 import io.kotest.matchers.shouldBe
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.*
-import org.junit.*
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.shadows.ShadowToast
