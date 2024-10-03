@@ -48,6 +48,8 @@ object Versions {
     const val RETROFIT = "2.9.0"
     const val ROBOLECTRIC = "4.10.2"
 
+    const val ROOM = "2.6.1"
+
     const val SECURITY_CRYPTO = "1.0.0"
 
     const val TIMBER = "4.7.1"

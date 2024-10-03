@@ -57,6 +57,12 @@ object Dependencies {
         const val MOSHI_KOTLIN = "com.squareup.moshi:moshi-kotlin:${Versions.MOSHI}"
     }
 
+    object Room {
+        const val RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
+        const val KTX = "androidx.room:room-ktx:${Versions.ROOM}"
+        const val COMPILER = "androidx.room:room-compiler:${Versions.ROOM}"
+    }
+
     object Test {
         const val COMPOSE_UI_TEST_JUNIT = "androidx.compose.ui:ui-test-junit4"
         const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.KOTLIN_COROUTINES}"
