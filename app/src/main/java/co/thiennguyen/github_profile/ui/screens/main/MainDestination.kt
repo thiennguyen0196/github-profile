@@ -4,5 +4,5 @@ import co.thiennguyen.github_profile.ui.base.BaseDestination
 
 sealed class MainDestination {
 
-    object Home : BaseDestination("home")
+    object UserList : BaseDestination("user_list")
 }

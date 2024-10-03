@@ -132,6 +132,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     with(Dependencies.AndroidX) {
+        implementation(ACTIVITY_KTX)
         implementation(CORE_KTX)
         implementation(LIFECYCLE_RUNTIME_KTX)
         implementation(LIFECYCLE_RUNTIME_COMPOSE)
@@ -140,9 +141,10 @@ dependencies {
 
     with(Dependencies.Compose) {
         implementation(platform(BOM))
+        implementation(COIL)
         implementation(UI)
         implementation(UI_TOOLING)
-        implementation(MATERIAL)
+        implementation(MATERIAL3)
         implementation(NAVIGATION)
 
         implementation(ACCOMPANIST_PERMISSIONS)
@@ -193,30 +195,11 @@ koverReport {
     defaults {
         mergeWith("stagingDebug")
         filters {
-            val excludedFiles = listOf(
-                "*.BuildConfig.*",
-                "*.BuildConfig",
-                // Enum
-                "*.*\$Creator*",
-                // DI
-                "*.di.*",
-                // Hilt
-                "*.*_ComponentTreeDeps*",
-                "*.*_HiltComponents*",
-                "*.*_HiltModules*",
-                "*.*_MembersInjector*",
-                "*.*_Factory*",
-                "*.Hilt_*",
-                "dagger.hilt.internal.*",
-                "hilt_aggregated_deps.*",
-                // Jetpack Compose
-                "*.ComposableSingletons*",
-                "*.*\$*Preview\$*",
-                "*.ui.preview.*",
-            )
-
+            includes {
+                classes("**.viewmodel.**", "**.usecase.**", "**.repository.**")
+            }
             excludes {
-                classes(excludedFiles)
+                classes("**_**")
             }
         }
     }

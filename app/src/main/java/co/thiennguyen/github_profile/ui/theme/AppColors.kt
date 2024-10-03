@@ -1,26 +1,56 @@
 package co.thiennguyen.github_profile.ui.theme
 
-import androidx.compose.material.*
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.graphics.Color
 
-// Base colors here
-// e.g. internal val GreenCitrus = Color(0xFF99CC00)
+// Base colors
+internal val PrimaryShade500Color = Color(0xFFEBE6F4)
+internal val SecondaryShade500Color = Color(0xFF0000FF)
+internal val SurfaceWhiteColor = Color(0xFFFFFFFF)
+internal val SurfaceBlackColor = Color(0xFF000000)
 
-/**
- * Expand the final [Colors] class to provide more custom app colors.
- */
 data class AppColors(
-    val themeColors: Colors
+    val themeColors: ColorScheme,
+    val primaryColor: PrimaryColor = PrimaryColor(
+        shade500 = PrimaryShade500Color,
+    ),
+    val secondaryColor: SecondaryColor = SecondaryColor(
+        shade500 = SecondaryShade500Color,
+    ),
+    val shadeColor: ShadeColor = ShadeColor(
+        white = SurfaceWhiteColor,
+        black = SurfaceBlackColor,
+    ),
+)
 
-    // Custom colors here
+data class PrimaryColor(
+    val shade500: Color,
+)
+
+data class SecondaryColor(
+    val shade500: Color,
+)
+
+data class ShadeColor(
+    val white: Color,
+    val black: Color,
 )
 
 internal val LightColorPalette = AppColors(
-    themeColors = lightColors()
+    themeColors = lightColorScheme(
+        primary = PrimaryShade500Color,
+        secondary = SecondaryShade500Color,
+        surface = SurfaceWhiteColor,
+        background = SurfaceWhiteColor,
+    )
 )
 
 internal val DarkColorPalette = AppColors(
-    themeColors = darkColors()
+    // Config for dark mode
+    themeColors = darkColorScheme()
 )
 
 internal val LocalAppColors = staticCompositionLocalOf { LightColorPalette }

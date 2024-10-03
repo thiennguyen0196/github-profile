@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Github Profile</string>
+
     <string name="error_generic">Unexpected error</string>
+
+    <string name="user_list_title">Github Users</string>
 </resources>
