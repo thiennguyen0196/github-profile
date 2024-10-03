@@ -1,5 +1,6 @@
 object Dependencies {
     object AndroidX {
+        const val ACTIVITY_KTX = "androidx.activity:activity-ktx:${Versions.ACTIVITY_KTX}"
         const val CORE_KTX = "androidx.core:core-ktx:${Versions.CORE_KTX}"
         const val LIFECYCLE_RUNTIME_KTX = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE}"
         const val LIFECYCLE_RUNTIME_COMPOSE = "androidx.lifecycle:lifecycle-runtime-compose:${Versions.LIFECYCLE}"
@@ -12,8 +13,10 @@ object Dependencies {
         const val BOM = "androidx.compose:compose-bom:${Versions.COMPOSE_BOM}"
         const val UI = "androidx.compose.ui:ui"
         const val UI_TOOLING = "androidx.compose.ui:ui-tooling"
-        const val MATERIAL = "androidx.compose.material:material"
+        const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.MATERIAL3}"
         const val NAVIGATION = "androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
+
+        const val COIL = "io.coil-kt:coil-compose:${Versions.COIL}"
 
         const val ACCOMPANIST_PERMISSIONS = "com.google.accompanist:accompanist-permissions:${Versions.ACCOMPANIST}"
     }

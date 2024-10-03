@@ -1,7 +1,8 @@
 package co.thiennguyen.github_profile.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
 import androidx.compose.runtime.*
 
 @Composable
@@ -18,21 +19,18 @@ fun ComposeTheme(
     val shapes = LocalAppShapes.current
 
     CompositionLocalProvider(
-        LocalAppColors provides colors
+        LocalAppColors provides colors,
+        LocalAppTypography provides typography,
     ) {
         MaterialTheme(
-            colors = colors.themeColors,
-            typography = typography,
+            colorScheme = colors.themeColors,
+            typography = typography.themeTypography,
             shapes = shapes,
             content = content
         )
     }
 }
 
-/**
- * Alternate to [MaterialTheme] allowing us to add our own theme systems
- * or to extend [MaterialTheme]'s types e.g. return our own [Colors] extension.
- */
 object AppTheme {
 
     val colors: AppColors
@@ -40,7 +38,7 @@ object AppTheme {
         @ReadOnlyComposable
         get() = LocalAppColors.current
 
-    val typography: Typography
+    val typography: AppTypography
         @Composable
         @ReadOnlyComposable
         get() = LocalAppTypography.current
@@ -54,9 +52,4 @@ object AppTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalAppDimensions.current
-
-    val styles: AppStyles
-        @Composable
-        @ReadOnlyComposable
-        get() = LocalAppStyles.current
 }
