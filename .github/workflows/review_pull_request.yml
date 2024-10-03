@@ -3,9 +3,6 @@ name: Review pull request
 on:
   pull_request:
     types: [ opened, reopened, ready_for_review, synchronize ]
-  push:
-    branches:
-      - ci/#8-Add-CI-steps
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -51,7 +48,7 @@ jobs:
         env:
           FIREBASE_GOOGLE_SERVICES_JSON: ${{ secrets.FIREBASE_GOOGLE_SERVICES_JSON }}
         run: |
-          echo -e FIREBASE_GOOGLE_SERVICES_JSON | base64 -d > app/google-services.json
+          echo -e $FIREBASE_GOOGLE_SERVICES_JSON | base64 -d > app/google-services.json
 
       - name: Run Detekt
         run: ./gradlew detekt
