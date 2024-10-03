@@ -1,4 +1,4 @@
-https://github.com/thiennguyen0196/github-profile/issues/??
+Close https://github.com/thiennguyen0196/github-profile/issues/??
 
 ## What happened 👀
 
@@ -6,4 +6,4 @@ Provide a description of the **changes** this pull request brings to the codebas
 
 ## Proof Of Work 📹
 
-Show us the implementation: screenshots, GIFs, etc.
+Show the implementation: screenshots, GIFs, etc.
