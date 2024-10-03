@@ -5,6 +5,10 @@ object Plugins {
 
     const val DETEKT = "io.gitlab.arturbosch.detekt"
 
+    const val FIREBASE_CRASHLYTICS = "com.google.firebase.crashlytics"
+
+    const val GOOGLE_SERVICES = "com.google.gms.google-services"
+
     const val HILT_ANDROID = "com.google.dagger.hilt.android"
 
     const val KOTLIN_JVM = "org.jetbrains.kotlin.jvm"

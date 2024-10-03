@@ -7,6 +7,8 @@ plugins {
     id(Plugins.HILT_ANDROID) version Versions.HILT apply false
     id(Plugins.DETEKT) version Versions.DETEKT
     id(Plugins.KOVER) version Versions.KOVER
+    id(Plugins.GOOGLE_SERVICES) version Versions.GOOGLE_SERVICES apply false
+    id(Plugins.FIREBASE_CRASHLYTICS) version Versions.FIREBASE_ANALYTICS apply false
 }
 
 tasks.register("clean", Delete::class) {
