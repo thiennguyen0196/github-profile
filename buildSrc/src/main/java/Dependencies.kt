@@ -18,6 +18,11 @@ object Dependencies {
         const val ACCOMPANIST_PERMISSIONS = "com.google.accompanist:accompanist-permissions:${Versions.ACCOMPANIST}"
     }
 
+    object GoogleServices {
+        const val FIREBASE_BOM = "com.google.firebase:firebase-bom:${Versions.FIREBASE_BOM}"
+        const val FIREBASE_CRASHLYTICS = "com.google.firebase:firebase-crashlytics"
+    }
+
     object Hilt {
         const val ANDROID = "com.google.dagger:hilt-android:${Versions.HILT}"
         const val NAVIGATION_COMPOSE = "androidx.hilt:hilt-navigation-compose:${Versions.HILT_NAVIGATION_COMPOSE}"

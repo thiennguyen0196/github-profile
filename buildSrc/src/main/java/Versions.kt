@@ -18,7 +18,12 @@ object Versions {
     const val DATASTORE_PREFERENCES = "1.0.0"
     const val DETEKT = "1.21.0"
 
+    const val FIREBASE_BOM = "32.5.0"
+    const val FIREBASE_ANALYTICS = "2.9.9"
+
     const val GRADLE = "8.1.2"
+
+    const val GOOGLE_SERVICES = "4.4.0"
 
     const val HILT = "2.48"
     const val HILT_NAVIGATION_COMPOSE = "1.0.0"

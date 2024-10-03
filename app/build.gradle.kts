@@ -7,6 +7,8 @@ plugins {
     id(Plugins.KOTLIN_PARCELIZE)
     id(Plugins.HILT_ANDROID)
     id(Plugins.KOVER)
+    id(Plugins.GOOGLE_SERVICES)
+    id(Plugins.FIREBASE_CRASHLYTICS)
 }
 
 val signingProperties = loadProperties("$rootDir/signing.properties")
@@ -144,6 +146,11 @@ dependencies {
         implementation(NAVIGATION)
 
         implementation(ACCOMPANIST_PERMISSIONS)
+    }
+
+    with(Dependencies.GoogleServices) {
+        implementation(platform(FIREBASE_BOM))
+        implementation(FIREBASE_CRASHLYTICS)
     }
 
     with(Dependencies.Hilt) {
