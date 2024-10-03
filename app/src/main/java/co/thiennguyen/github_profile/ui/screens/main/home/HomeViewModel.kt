@@ -5,7 +5,7 @@ import co.thiennguyen.github_profile.domain.usecases.UseCase
 import co.thiennguyen.github_profile.ui.base.BaseViewModel
 import co.thiennguyen.github_profile.ui.models.UiModel
 import co.thiennguyen.github_profile.ui.models.toUiModel
-import co.thiennguyen.github_profile.DispatchersProvider
+import co.thiennguyen.github_profile.util.DispatchersProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject

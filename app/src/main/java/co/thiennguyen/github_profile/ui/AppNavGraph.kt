@@ -6,7 +6,6 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.navDeepLink
 import co.thiennguyen.github_profile.ui.base.BaseDestination
 import co.thiennguyen.github_profile.ui.screens.main.mainNavGraph
 
@@ -30,11 +29,6 @@ fun NavGraphBuilder.composable(
     composable(
         route = destination.route,
         arguments = destination.arguments,
-        deepLinks = destination.deepLinks.map {
-            navDeepLink {
-                uriPattern = it
-            }
-        },
         content = content
     )
 }

@@ -1,6 +1,6 @@
 package co.thiennguyen.github_profile.test
 
-import co.thiennguyen.github_profile.DispatchersProvider
+import co.thiennguyen.github_profile.util.DispatchersProvider
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.*
 import org.junit.rules.TestWatcher

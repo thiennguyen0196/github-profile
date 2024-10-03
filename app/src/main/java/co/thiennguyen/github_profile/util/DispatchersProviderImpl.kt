@@ -1,4 +1,4 @@
-package co.thiennguyen.github_profile
+package co.thiennguyen.github_profile.util
 
 import kotlinx.coroutines.Dispatchers
 

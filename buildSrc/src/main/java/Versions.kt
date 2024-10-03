@@ -9,7 +9,6 @@ object Versions {
     const val ACCOMPANIST = "0.30.1"
 
     const val CHUCKER = "3.5.2"
-    const val COMMON_KTX = "0.1.1"
     const val COMPOSE_BOM = "2023.09.02"
     const val COMPOSE_COMPILER = "1.5.3"
     const val COMPOSE_NAVIGATION = "2.5.3"

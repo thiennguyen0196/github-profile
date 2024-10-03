@@ -10,6 +10,8 @@ plugins {
 }
 
 val signingProperties = loadProperties("$rootDir/signing.properties")
+val envProperties = loadProperties("$rootDir/env.properties")
+val baseApiUrl = envProperties.getProperty("BASE_API_URL") as String
 val getVersionCode: () -> Int = {
     if (project.hasProperty("versionCode")) {
         (project.property("versionCode") as String).toInt()
@@ -43,13 +45,6 @@ android {
             keyPassword = signingProperties.getProperty("KEY_PASSWORD") as String
             keyAlias = signingProperties.getProperty("KEY_ALIAS") as String
         }
-
-        getByName(BuildTypes.DEBUG) {
-            storeFile = file("../config/debug.keystore")
-            storePassword = "oQ4mL1jY2uX7wD8q"
-            keyAlias = "debug-key-alias"
-            keyPassword = "oQ4mL1jY2uX7wD8q"
-        }
     }
 
     buildTypes {
@@ -59,14 +54,12 @@ android {
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
             signingConfig = signingConfigs[BuildTypes.RELEASE]
-            buildConfigField("String", "BASE_API_URL", "\"https://jsonplaceholder.typicode.com/\"")
         }
 
         debug {
             // For quickly testing build with proguard, enable this
             isMinifyEnabled = false
             signingConfig = signingConfigs[BuildTypes.DEBUG]
-            buildConfigField("String", "BASE_API_URL", "\"https://jsonplaceholder.typicode.com/\"")
         }
     }
 
@@ -74,9 +67,12 @@ android {
     productFlavors {
         create(Flavors.STAGING) {
             applicationIdSuffix = ".staging"
+            buildConfigField("String", "BASE_API_URL", baseApiUrl)
         }
 
-        create(Flavors.PRODUCTION) {}
+        create(Flavors.PRODUCTION) {
+            buildConfigField("String", "BASE_API_URL", baseApiUrl)
+        }
     }
 
     sourceSets["test"].resources {

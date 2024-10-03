@@ -8,6 +8,5 @@ fun BaseScreen(
     content: @Composable () -> Unit,
 ) {
     // TODO Base logic for all screens here
-
     content()
 }

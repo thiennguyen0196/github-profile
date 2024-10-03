@@ -59,6 +59,7 @@ class HomeScreenTest : BaseScreenTest() {
 
             ShadowToast.showedToast(activity.getString(R.string.error_generic)) shouldBe true
         }
+        intArrayOf(0,1);
     }
 
     private fun initComposable(

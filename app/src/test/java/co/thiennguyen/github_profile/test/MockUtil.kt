@@ -1,6 +1,6 @@
 package co.thiennguyen.github_profile.test
 
-import co.thiennguyen.domain.models.Model
+import co.thiennguyen.github_profile.domain.models.Model
 
 object MockUtil {
 
