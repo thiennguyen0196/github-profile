@@ -1,11 +1,10 @@
-package co.thiennguyen.github_profile.ui.screens.main.userlist
+package co.thiennguyen.github_profile.ui.screens.userdetail
 
 import app.cash.turbine.test
-import co.thiennguyen.github_profile.domain.usecases.GetUsersUseCase
+import co.thiennguyen.github_profile.domain.usecases.GetUserDetailUseCase
 import co.thiennguyen.github_profile.test.CoroutineTestRule
 import co.thiennguyen.github_profile.test.MockUtil
 import co.thiennguyen.github_profile.ui.models.toUiModel
-import co.thiennguyen.github_profile.ui.screens.userlist.UserListViewModel
 import co.thiennguyen.github_profile.util.DispatchersProvider
 import io.kotest.matchers.shouldBe
 import io.mockk.every
@@ -21,35 +20,37 @@ import org.junit.Rule
 import org.junit.Test
 
 @ExperimentalCoroutinesApi
-class UserListViewModelTest {
+class UserDetailViewModelTest {
 
     @get:Rule
     val coroutinesRule = CoroutineTestRule()
 
-    private val mockUseCase: GetUsersUseCase = mockk()
+    private val mockUseCase: GetUserDetailUseCase = mockk()
 
-    private lateinit var viewModel: UserListViewModel
+    private lateinit var viewModel: UserDetailViewModel
 
     @Before
     fun setUp() {
-        every { mockUseCase(any()) } returns flowOf(MockUtil.users)
+        every { mockUseCase(any()) } returns flowOf(MockUtil.users.first())
 
         initViewModel()
     }
 
     @Test
-    fun `When loading users successfully, it shows the user list`() = runTest {
-        viewModel.users.test {
-            expectMostRecentItem() shouldBe MockUtil.users.map { it.toUiModel() }
+    fun `When loading user successfully, it shows the user detail`() = runTest {
+        viewModel.getUserDetail("userName")
+        viewModel.user.test {
+            expectMostRecentItem() shouldBe MockUtil.users.first().toUiModel()
         }
     }
 
     @Test
-    fun `When loading models failed, it shows the corresponding error`() = runTest {
+    fun `When loading user failed, it shows the corresponding error`() = runTest {
         val error = Exception()
         every { mockUseCase(any()) } returns flow { throw error }
         initViewModel(dispatchers = CoroutineTestRule(StandardTestDispatcher()).testDispatcherProvider)
 
+        viewModel.getUserDetail("userName")
         viewModel.error.test {
             advanceUntilIdle()
 
@@ -58,9 +59,10 @@ class UserListViewModelTest {
     }
 
     @Test
-    fun `When loading models, it shows and hides loading correctly`() = runTest {
+    fun `When loading user, it shows and hides loading correctly`() = runTest {
         initViewModel(dispatchers = CoroutineTestRule(StandardTestDispatcher()).testDispatcherProvider)
 
+        viewModel.getUserDetail("userName")
         viewModel.isLoading.test {
             awaitItem() shouldBe false
             awaitItem() shouldBe true
@@ -69,7 +71,7 @@ class UserListViewModelTest {
     }
 
     private fun initViewModel(dispatchers: DispatchersProvider = coroutinesRule.testDispatcherProvider) {
-        viewModel = UserListViewModel(
+        viewModel = UserDetailViewModel(
             dispatchers,
             mockUseCase,
         )

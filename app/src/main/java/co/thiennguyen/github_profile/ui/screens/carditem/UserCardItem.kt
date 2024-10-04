@@ -38,8 +38,8 @@ import coil.compose.AsyncImage
 fun UserCardItem(
     user: UserUiModel,
     onItemClicked: () -> Unit,
-    showLocation: Boolean = false,
     modifier: Modifier = Modifier,
+    showLocation: Boolean = false,
 ) {
     Row(
         modifier = modifier
@@ -90,7 +90,7 @@ fun UserCardItem(
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                 )
-            } else {
+            } else if (user.location.isNotBlank()) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier.fillMaxWidth(),
