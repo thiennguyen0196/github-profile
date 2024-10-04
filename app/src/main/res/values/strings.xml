@@ -3,6 +3,7 @@
     <string name="app_name">Github Profile</string>
 
     <string name="error_generic">Unexpected error</string>
+    <string name="error_no_connectivity">There is no network connectivity</string>
 
     <string name="user_list_title">Github Users</string>
 </resources>
