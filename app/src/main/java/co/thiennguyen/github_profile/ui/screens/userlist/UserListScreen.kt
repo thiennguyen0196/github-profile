@@ -1,4 +1,4 @@
-package co.thiennguyen.github_profile.ui.screens.main.userlist
+package co.thiennguyen.github_profile.ui.screens.userlist
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,7 +28,7 @@ import co.thiennguyen.github_profile.R
 import co.thiennguyen.github_profile.extensions.collectAsEffect
 import co.thiennguyen.github_profile.ui.base.BaseScreen
 import co.thiennguyen.github_profile.ui.models.UserUiModel
-import co.thiennguyen.github_profile.ui.screens.main.carditem.UserCardItem
+import co.thiennguyen.github_profile.ui.screens.carditem.UserCardItem
 import co.thiennguyen.github_profile.ui.showToast
 import co.thiennguyen.github_profile.ui.theme.AppTheme.dimensions
 import co.thiennguyen.github_profile.ui.theme.ComposeTheme
@@ -134,11 +134,17 @@ private fun UserListScreenPreview() {
                     loginUserName = "David",
                     htmlUrl = "https://github.com",
                     avatarUrl = "",
+                    location = "location",
+                    following = 2,
+                    followers = 2,
                 ),
                 UserUiModel(
                     loginUserName = "David David David David David David David David David",
                     htmlUrl = "https://github.com.github.com.github.com.github.com",
                     avatarUrl = "",
+                    location = "location",
+                    followers = 2,
+                    following = 2,
                 )
             ),
             isLoading = false,

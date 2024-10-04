@@ -1,4 +1,4 @@
-package co.thiennguyen.github_profile.ui.screens.main.userlist
+package co.thiennguyen.github_profile.ui.screens.userlist
 
 import androidx.lifecycle.viewModelScope
 import co.thiennguyen.github_profile.domain.usecases.GetUsersUseCase

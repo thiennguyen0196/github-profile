@@ -6,4 +6,9 @@
     <string name="error_no_connectivity">There is no network connectivity</string>
 
     <string name="user_list_title">Github Users</string>
+
+    <string name="user_detail_title">User Details</string>
+    <string name="user_detail_followers">Follower</string>
+    <string name="user_detail_following">Following</string>
+    <string name="user_detail_blog">Blog</string>
 </resources>
