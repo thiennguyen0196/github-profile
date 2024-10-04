@@ -36,7 +36,10 @@ object MockUtil {
         UserResponse(
             login = "login",
             avatarUrl = "avatarUrl",
-            htmlUrl = "htmlUrl"
+            htmlUrl = "htmlUrl",
+            location = "location",
+            followers = 2,
+            following = 2,
         )
     )
 

@@ -2,6 +2,7 @@ package co.thiennguyen.github_profile.data.repositories
 
 import co.thiennguyen.github_profile.data.local.dao.UserDao
 import co.thiennguyen.github_profile.data.local.entity.toModels
+import co.thiennguyen.github_profile.data.remote.models.responses.toModel
 import co.thiennguyen.github_profile.data.remote.models.responses.toModels
 import co.thiennguyen.github_profile.data.remote.services.ApiService
 import co.thiennguyen.github_profile.data.test.MockUtil
@@ -79,6 +80,28 @@ class UserRepositoryTest {
         coEvery { mockService.getUsers(any(), any()) } throws expected
 
         repository.getUsers(2, 20).catch {
+            it shouldBe expected
+        }.collect()
+    }
+
+    @Test
+    fun `When calling getUserDetail successful, it returns success`() =
+        runTest {
+            val expected = MockUtil.responses.first()
+            coEvery { mockService.getUserDetail(any()) } returns expected
+
+            repository.getUserDetail("name").collect {
+                it shouldBe expected.toModel()
+            }
+        }
+
+
+    @Test
+    fun `When calling getUserDetail failed, it returns error`() = runTest {
+        val expected = Throwable()
+        coEvery { mockService.getUserDetail(any()) } throws expected
+
+        repository.getUserDetail("name").catch {
             it shouldBe expected
         }.collect()
     }

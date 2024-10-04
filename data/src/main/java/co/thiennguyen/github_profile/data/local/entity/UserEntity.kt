@@ -15,6 +15,9 @@ private fun UserEntity.toModel() = User(
     login = this.loginUserName,
     htmlUrl = this.htmlUrl,
     avatarUrl = this.avatarUrl,
+    followers = -1,
+    following = -1,
+    location = "",
 )
 
 fun List<UserEntity>.toModels() = this.map { it.toModel() }
