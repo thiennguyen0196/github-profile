@@ -20,6 +20,7 @@ object AppDimensions {
 
     // Image size
     val imageSizeLarge = 96.dp
+    val imageSizeMedium = 64.dp
 
     // Spacing values
     val spacingXSmall = 4.dp

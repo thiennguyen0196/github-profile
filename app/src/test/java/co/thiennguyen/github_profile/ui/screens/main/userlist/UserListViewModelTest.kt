@@ -5,6 +5,7 @@ import co.thiennguyen.github_profile.domain.usecases.GetUsersUseCase
 import co.thiennguyen.github_profile.test.CoroutineTestRule
 import co.thiennguyen.github_profile.test.MockUtil
 import co.thiennguyen.github_profile.ui.models.toUiModel
+import co.thiennguyen.github_profile.ui.screens.userlist.UserListViewModel
 import co.thiennguyen.github_profile.util.DispatchersProvider
 import io.kotest.matchers.shouldBe
 import io.mockk.every
