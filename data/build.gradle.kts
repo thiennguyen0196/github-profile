@@ -2,6 +2,7 @@ plugins {
     id(Plugins.ANDROID_LIBRARY)
     id(Plugins.KOTLIN_ANDROID)
     id(Plugins.KOVER)
+    id(Plugins.KOTLIN_KAPT)
 }
 
 android {
@@ -66,6 +67,13 @@ dependencies {
         api(MOSHI)
         implementation(MOSHI_ADAPTERS)
         implementation(MOSHI_KOTLIN)
+    }
+
+    with(Dependencies.Room) {
+        implementation(RUNTIME)
+        implementation(KTX)
+        annotationProcessor(COMPILER)
+        kapt(COMPILER)
     }
 
     with(Dependencies.Test) {

@@ -161,6 +161,13 @@ dependencies {
         kapt(COMPILER)
     }
 
+    with(Dependencies.Room) {
+        implementation(RUNTIME)
+        implementation(KTX)
+        annotationProcessor(COMPILER)
+        kapt(COMPILER)
+    }
+
     with(Dependencies.Log) {
         implementation(TIMBER)
 

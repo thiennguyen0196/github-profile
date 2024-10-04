@@ -1,10 +1,14 @@
 package co.thiennguyen.github_profile.domain.test
 
-import co.thiennguyen.github_profile.domain.models.Model
+import co.thiennguyen.github_profile.domain.models.User
 
 object MockUtil {
 
-    val models = listOf(
-        Model(id = 1)
+    val users = listOf(
+        User(
+            login = "login",
+            avatarUrl = "avatarUrl",
+            htmlUrl = "htmlUrl",
+        )
     )
 }
