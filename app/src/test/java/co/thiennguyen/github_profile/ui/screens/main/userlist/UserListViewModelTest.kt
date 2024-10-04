@@ -1,13 +1,8 @@
 package co.thiennguyen.github_profile.ui.screens.main.userlist
 
-import co.thiennguyen.github_profile.domain.usecases.UseCase
 import co.thiennguyen.github_profile.test.CoroutineTestRule
-import co.thiennguyen.github_profile.test.MockUtil
 import co.thiennguyen.github_profile.util.DispatchersProvider
-import io.mockk.every
-import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.flowOf
 import org.junit.Before
 import org.junit.Rule
 
@@ -17,13 +12,13 @@ class UserListViewModelTest {
     @get:Rule
     val coroutinesRule = CoroutineTestRule()
 
-    private val mockUseCase: UseCase = mockk()
+//    private val mockUseCase: UseCase = mockk()
 
     private lateinit var viewModel: UserListViewModel
 
     @Before
     fun setUp() {
-        every { mockUseCase() } returns flowOf(MockUtil.models)
+//        every { mockUseCase() } returns flowOf(MockUtil.models)
 
         initViewModel()
     }
