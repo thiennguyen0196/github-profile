@@ -1,6 +1,8 @@
 package co.thiennguyen.github_profile.data.test
 
+import co.thiennguyen.github_profile.data.local.entity.UserEntity
 import co.thiennguyen.github_profile.data.remote.models.responses.ErrorResponse
+import co.thiennguyen.github_profile.data.remote.models.responses.UserResponse
 import io.mockk.every
 import io.mockk.mockk
 import okhttp3.ResponseBody
@@ -31,6 +33,18 @@ object MockUtil {
     )
 
     val responses = listOf(
-        co.thiennguyen.github_profile.data.remote.models.responses.Response(id = 1)
+        UserResponse(
+            login = "login",
+            avatarUrl = "avatarUrl",
+            htmlUrl = "htmlUrl"
+        )
+    )
+
+    val entities = listOf(
+        UserEntity(
+            loginUserName = "loginUserName",
+            avatarUrl = "avatarUrl",
+            htmlUrl = "htmlUrl"
+        )
     )
 }
