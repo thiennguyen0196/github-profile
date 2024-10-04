@@ -8,7 +8,10 @@ object MockUtil {
         User(
             login = "login",
             avatarUrl = "avatarUrl",
-            htmlUrl = "htmlUrl"
+            htmlUrl = "htmlUrl",
+            followers = 2,
+            following = 2,
+            location = "location",
         )
     )
 }
