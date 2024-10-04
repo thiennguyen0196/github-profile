@@ -6,4 +6,6 @@ import kotlinx.coroutines.flow.Flow
 interface UserRepository {
 
     fun getUsers(page: Int, perPage: Int): Flow<List<User>>
+
+    fun getUserDetail(username: String): Flow<User>
 }

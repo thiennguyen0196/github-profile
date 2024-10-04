@@ -4,6 +4,7 @@ import co.thiennguyen.github_profile.data.extensions.flowTransform
 import co.thiennguyen.github_profile.data.local.dao.UserDao
 import co.thiennguyen.github_profile.data.local.entity.toEntities
 import co.thiennguyen.github_profile.data.local.entity.toModels
+import co.thiennguyen.github_profile.data.remote.models.responses.toModel
 import co.thiennguyen.github_profile.data.remote.models.responses.toModels
 import co.thiennguyen.github_profile.data.remote.services.ApiService
 import co.thiennguyen.github_profile.domain.models.User
@@ -31,6 +32,11 @@ class UserRepositoryImpl(
             userDao.insertUsers(remoteUsers.toEntities())
         }
         return@flowTransform remoteUsers
+    }
 
+    override fun getUserDetail(username: String): Flow<User> = flowTransform {
+        apiService.getUserDetail(
+            username = username
+        ).toModel()
     }
 }

@@ -9,6 +9,9 @@ object MockUtil {
             login = "login",
             avatarUrl = "avatarUrl",
             htmlUrl = "htmlUrl",
+            location = "location",
+            followers = 2,
+            following = 2,
         )
     )
 }
