@@ -60,7 +60,7 @@ jobs:
 
       - name: Set up release keystore
         env:
-          ENV_PROPERTIES: ${{ secrets.RELEASE_KEYSTORE }}
+          RELEASE_KEYSTORE: ${{ secrets.RELEASE_KEYSTORE }}
         run: |
           echo -e $RELEASE_KEYSTORE | base64 -d > config/release.keystore
 
