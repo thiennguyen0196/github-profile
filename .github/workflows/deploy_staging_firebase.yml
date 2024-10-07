@@ -3,7 +3,6 @@ name: Deploy Staging build to Firebase
 on:
   push:
     branches:
-      - cd/#9-Setup-CD
       - develop
   workflow_dispatch:
 
