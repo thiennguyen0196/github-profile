@@ -2,7 +2,7 @@
 
 ![Firebase App Distribution - Staging](https://github.com/thiennguyen0196/github-profile/actions/workflows/deploy_staging_firebase.yml/badge.svg)
 ![Firebase App Distribution - Production](https://github.com/thiennguyen0196/github-profile/actions/workflows/deploy_staging_firebase.yml/badge.svg)
-![CI Review pull request](https://github.com/thiennguyen0196/github-profile/actions/workflows/deploy_staging_firebase.yml/badge.svg)
+![CI Review pull request](https://github.com/thiennguyen0196/github-profile/actions/workflows/review_pull_request.yml/badge.svg)
 
 Github Profile is a simple Android application which uses Github API that allows users to view the list of Github users and their detail information.
 - User list screen (with pagination)
