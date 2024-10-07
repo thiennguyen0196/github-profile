@@ -48,7 +48,7 @@ https://github.com/user-attachments/assets/18df4de7-e445-404d-b447-977b5e3da5fd
 - After cloning the repo, open Android Studio and update your BASE_API_URL in `env.properties` file.
 - Run build.
 
-## **5. Get the app APK file from Firebase App Distribution#**
+## **5. Get the app APK file from Firebase App Distribution**
 - Please contact me to be invited to the tester link and download the apk file.
 - Download and install it on your device.
 
