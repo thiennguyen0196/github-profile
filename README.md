@@ -4,7 +4,7 @@ Github Profile is a simple Android application which uses Github API that allows
 - User detail screen
 
 ## **1. Architecture**
-Using Clean Architecture, the application provides a clean way to maintain and easy to scale up as well as writing unit test. It contains 3 layers:
+Using Clean Architecture and MVVM, the application provides a clean way to maintain and easy to scale up as well as writing unit test. It contains 3 layers:
 - Data
 - Domain
 - Presentation (app)
