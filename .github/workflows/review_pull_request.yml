@@ -14,7 +14,7 @@ concurrency:
 jobs:
   review_pull_request:
     if: github.event.pull_request.draft == false
-    name: Review pull request
+    name: CI
     runs-on: ubuntu-latest
     environment: staging
     timeout-minutes: 30
