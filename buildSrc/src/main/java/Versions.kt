@@ -4,7 +4,7 @@ object Versions {
     const val ANDROID_TARGET_SDK = 34
 
     const val ANDROID_VERSION_CODE = 1
-    const val ANDROID_VERSION_NAME = "0.22.0"
+    const val ANDROID_VERSION_NAME = "0.0.1"
 
     const val ACCOMPANIST = "0.30.1"
     const val ACTIVITY_KTX = "1.8.0"

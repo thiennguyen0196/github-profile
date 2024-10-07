@@ -3,6 +3,9 @@ name: Review pull request
 on:
   pull_request:
     types: [ opened, reopened, ready_for_review, synchronize ]
+  push:
+    branches:
+      - develop
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
